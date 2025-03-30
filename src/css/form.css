@@ -1,0 +1,85 @@
+#form{
+  display: grid;
+  gap: 1.5rem;
+}
+
+.input-group{
+  display: grid;
+  gap: 1rem;
+
+  & > label{
+    font-size: 1.125rem;
+    color: var(--neutral-300);
+    font-weight: 500;
+  }
+}
+
+.input-file{
+  background-color: var(--neutral-800-026);
+  border-radius: .75rem;
+  border: .0625rem dashed var(--neutral-500);
+  
+  position: relative;
+  padding: 1rem;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+
+  & > input{
+    all: unset;
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+  }
+
+  & > .icon{
+    background-color: var(--neutral-800);
+    border-radius: .75rem;
+    padding: .5rem;
+    outline: .0625rem solid var(--neutral-700);
+  }
+
+  & > span{
+    color: var(--neutral-500);
+  }
+}
+
+small{
+  display: flex;
+  align-items: center;
+  gap: .375rem;
+  color: var(--neutral-500);
+  font-size: .75rem;
+}
+
+.input{
+  background-color: var(--neutral-800-026);
+  border-radius: .75rem;
+  outline: .0625rem solid var(--neutral-500);
+  color: var(--neutral-300);
+
+  font-size: 1rem;
+  height: 3rem;
+  padding-inline: 1rem;
+
+  &::placeholder{
+    font-family: var(--ff-base);
+    color: var(--neutral-500);
+  }
+}
+
+.submit{
+  background-color: var(--orange-500);
+  border-radius: .75rem;
+  color: var(--neutral-900);
+
+  font-size: 1.125rem;
+  font-weight: 700;
+  height: 3rem;
+
+  position: relative;
+  margin-bottom: 7.25rem;
+}

@@ -1,3 +1,8 @@
+@import url("./images.css");
+@import url("./app.css");
+@import url("./form.css");
+@import url("./ticket.css");
+
 *,
 *::after,
 *::before{
@@ -15,6 +20,8 @@
   --neutral-300: hsl(252, 6%, 83%);
   --neutral-500: hsl(245, 15%, 58%);
   --neutral-700: hsl(245, 19%, 35%);
+  --neutral-800: hsl(248, 28%, 26%);
+  --neutral-800-026: hsla(245, 19%, 35%, 0.26);
   --neutral-900: hsl(248, 70%, 10%);
   --orange-500: hsl(7, 88%, 67%);
   --orange-700: hsl(7, 71%, 60%);
@@ -28,5 +35,35 @@ html, body{
   height: auto;
   min-height: 100vh;
 
+  overflow-x: hidden;
   font-family: var(--ff-base);
+}
+
+body{
+  position: relative;
+  background: url("../assets/imgs/background-mobile.png") no-repeat center / cover;
+}
+
+header{
+  padding-top: 2rem;
+  text-align: center;
+
+  & img{
+    width: 10.5rem;
+  }
+}
+
+img{
+  vertical-align: top;
+}
+
+h1{
+  color: var(--neutral-0);
+  margin-bottom: 1.25rem;
+  line-height: 1.15;
+}
+
+p{
+  color: var(--neutral-300);
+  line-height: 1.3;
 }
