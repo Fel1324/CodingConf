@@ -7,8 +7,16 @@ export function formData(){
     event.preventDefault();
 
     const formData = new FormData(event.target);
-    console.log(formData.get("email"));
 
-    renderTicketContent();
+    const fullName = formData.get("name");
+    const emailAddres = formData.get("email");
+    const githubUsername = formData.get("username");
+
+    console.log(fullName, emailAddres);
+
+    renderTicketContent({
+      fullName,
+      emailAddres,
+    });
   });
 }
