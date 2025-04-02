@@ -1,22 +1,44 @@
 import { renderTicketContent } from "../ticket/render-ticket-content";
+import { validateInputs } from "./validations";
 
 export function formData(){
   const form = document.querySelector("#form");
   
   form.addEventListener("submit", (event) => {
-    event.preventDefault();
+    try {
+      event.preventDefault();
 
-    const formData = new FormData(event.target);
+      const formData = new FormData(event.target);
+  
+      const avatar = formData.get("avatar");
+      const name = formData.get("name");
+      const email = formData.get("email");
+      const username = formData.get("username");
+      
+      const error = validateInputs({ avatar, name, email, username });
+      if(error) throw new Error(error);
 
-    const fullName = formData.get("name");
-    const emailAddres = formData.get("email");
-    const githubUsername = formData.get("username");
+      const avatarSrc = document.querySelector(".avatar").src;
 
-    console.log(fullName, emailAddres);
+      const date = new Date();
+      const ticketDate = date.toLocaleDateString("en", {
+        day: "numeric",
+        month: "short",
+        year: "numeric",
+      });
+      const ticketId = date.getTime().toString().slice(9, 13);
 
-    renderTicketContent({
-      fullName,
-      emailAddres,
-    });
+      renderTicketContent({
+        avatarSrc,
+        name,
+        email,
+        username,
+        ticketDate,
+        ticketId,
+      });
+
+    } catch (error) {
+      console.error(error);
+    }
   });
 }

@@ -1,3 +1,4 @@
+import { renderAvatar } from "./render-avatar.js";
 import { formData } from "./form-data.js";
 
 const appHeader = document.querySelector(".app__header");
@@ -15,12 +16,12 @@ export function renderFormContent(){
         <label for="avatar">Upload Avatar</label>
 
         <div class="input-file">
-          <input type="file" name="avatar" id="avatar">
+          <input type="file" name="avatar" id="avatar" accept="image/png, image/jpeg">
           <img class="icon" src="./src/assets/icons/icon-upload.svg" alt="">
           <span>Drag and drop or click to upload</span>
         </div>
 
-        <small>
+        <small id="error-avatar">
           <img src="./src/assets/icons/icon-info.svg" alt="">
           Upload your photo (JPG or PNG, max size: 500KB).
         </small>
@@ -29,23 +30,26 @@ export function renderFormContent(){
       <div class="input-group">
         <label for="name">Full Name</label>
         <input class="input" type="text" name="name" id="name" required placeholder="full name" minlength="3" maxlength="100">
+        <small id="error-name"></small>
       </div>
 
       <div class="input-group">
         <label for="email">Email Addres</label>
         <input class="input" type="email" name="email" id="email" required placeholder="example@email.com">
+        <small id="error-email"></small>
       </div>
 
       <div class="input-group">
         <label for="username">Github Username</label>
         <input class="input" type="username" name="username" id="username" required placeholder="@yourusername" maxlength="100">
+        <small id="error-username"></small>
       </div>
 
       <button class="submit" type="submit">Generate My Ticket</button>
     </form>
   `;
 
-  // Verificações;
+  renderAvatar();
 
   formData();
 }
