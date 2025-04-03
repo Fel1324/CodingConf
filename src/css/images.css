@@ -30,3 +30,22 @@
 
   width: 18.75rem;
 }
+
+@media screen and (width >= 1024px) {
+  .pattern-line-top{
+    width: initial;
+  }
+  
+  .pattern-circle{
+    position: absolute;
+    right: 50%;
+    top: 50%;
+    translate: 185% -50%;
+  
+    width: initial;
+  }
+
+  .pattern-line-bottom{  
+    width: 42rem;
+  }
+}

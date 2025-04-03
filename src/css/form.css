@@ -1,6 +1,7 @@
 #form{
   display: grid;
   gap: 1.25rem;
+  position: relative;
 }
 
 .input-group{

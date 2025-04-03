@@ -1,14 +1,23 @@
 #app{
   width: 100%;
-  max-width: 26.5rem;
-  margin-inline: auto;
 }
 
 .app__header{
   padding: 2.5rem 2rem;
+  margin-inline: auto;
+  max-width: 26.5rem;
   text-align: center;
 }
 
 .app__body{
   padding-inline: 1.125rem;
+  max-width: 26.5rem;
+  margin-inline: auto;
+}
+
+@media screen and (width >= 1024px) {
+  .app__header{
+    padding: 2.5rem 0;
+    max-width: 41rem;
+  }
 }
